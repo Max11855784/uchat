@@ -64,57 +64,28 @@ Before running the project, install:
 
 ## How to Run
 
-### Option 1: Run with Visual Studio
+### Run from the terminal
 
-1. Clone the repository:
-
-```bash
-git clone https://github.com/Max11855784/uchat.git
-```
-
-2. Open the solution file in Visual Studio:
-
-```text
-uchat.sln
-```
-
-3. Start the server project first:
-
-```text
-uchat_server
-```
-
-4. Start one or more client applications:
-
-```text
-uchat_gui
-```
-
-or
-
-```text
-uchat
-```
-
-The server must be running before clients connect.
-
----
-
-### Option 2: Run from the terminal
-
-Restore dependencies:
+Restore project dependencies:
 
 ```bash
 dotnet restore
 ```
 
-Start the server:
+Start the server on port `5000`:
 
 ```bash
-dotnet run --project uchat_server/uchat_server.csproj
+dotnet run --project uchat_server/uchat_server.csproj -- 5000
 ```
 
-Then open another terminal window and start the WPF client:
+Keep this terminal window open. The server should display a message similar to:
+
+```text
+[OK] Server is running on port 5000
+[OK] Waiting for clients...
+```
+
+Open another terminal window and start the WPF client:
 
 ```bash
 dotnet run --project uchat_gui/uchat_gui.csproj
@@ -123,10 +94,24 @@ dotnet run --project uchat_gui/uchat_gui.csproj
 Alternatively, start the console client:
 
 ```bash
-dotnet run --project uchat/uchat_client.csproj
+dotnet run --project uchat/uchat_client.csproj -- 127.0.0.1 5000
 ```
 
-The server should remain running while clients are connected.
+The console client requires two arguments:
+
+```text
+uchat_client <server_ip> <port>
+```
+
+Example:
+
+```text
+127.0.0.1 5000
+```
+
+The server must be running before any client connects.
+
+---
 
 ## Educational Purpose
 
