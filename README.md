@@ -128,9 +128,3 @@ This project was created to practice:
 - Message handling
 - File transfer logic
 - Separation of client and server responsibilities
-
----
-
-## Author
-
-Maksym Rusanov
