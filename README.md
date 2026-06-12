@@ -64,13 +64,15 @@ Before running the project, install:
 
 ## How to Run
 
+### Option 1: Run with Visual Studio
+
 1. Clone the repository:
 
 ```bash
 git clone https://github.com/Max11855784/uchat.git
 ```
 
-2. Open the solution file:
+2. Open the solution file in Visual Studio:
 
 ```text
 uchat.sln
@@ -82,7 +84,7 @@ uchat.sln
 uchat_server
 ```
 
-4. Start one or more clients:
+4. Start one or more client applications:
 
 ```text
 uchat_gui
@@ -97,6 +99,34 @@ uchat
 The server must be running before clients connect.
 
 ---
+
+### Option 2: Run from the terminal
+
+Restore dependencies:
+
+```bash
+dotnet restore
+```
+
+Start the server:
+
+```bash
+dotnet run --project uchat_server/uchat_server.csproj
+```
+
+Then open another terminal window and start the WPF client:
+
+```bash
+dotnet run --project uchat_gui/uchat_gui.csproj
+```
+
+Alternatively, start the console client:
+
+```bash
+dotnet run --project uchat/uchat_client.csproj
+```
+
+The server should remain running while clients are connected.
 
 ## Educational Purpose
 
