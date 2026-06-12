@@ -57,8 +57,11 @@ uchat/
 
 Before running the project, install:
 
-- .NET 8 SDK
-- Visual Studio 2022 or another IDE with .NET support
+* Windows OS
+* .NET 8 SDK or newer
+* Git Bash, PowerShell, Windows Terminal, or another terminal
+
+An IDE such as Visual Studio 2022 can be used for development, but it is not required to run the project from the terminal.
 
 ---
 
